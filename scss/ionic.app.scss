@@ -21,3 +21,110 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.menu_opener {
+  display: none;
+}
+
+.menu_opener:checked ~ .link_one {
+  top: 95px;
+}
+.menu_opener:checked ~ .link_two {
+  left: 265px;
+}
+.menu_opener:checked ~ .link_three {
+  top: 355px;
+}
+.menu_opener:checked ~ .link_four {
+  left: 5px;
+}
+.menu_opener:checked ~ .barre_hamburger {
+  opacity: 0;
+}
+.menu_opener:checked ~ .menu_opener_label:after {
+  transform: rotate(45deg);
+  top: 70px;
+}
+.menu_opener:checked ~ .menu_opener_label:before {
+  transform: rotate(-45deg);
+  top: 70px;
+}
+
+.menu_opener_label {
+  background: #87CEEB;
+  width: 150px;
+  height: 150px;
+  display: block;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  top: 200px;
+  left: 110px;
+  z-index: 10;
+}
+.menu_opener_label:after {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background: #000;
+  content: "";
+  width: 50px;
+  height: 10px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.menu_opener_label:before {
+  position: absolute;
+  top: 90px;
+  left: 50px;
+  background: #000;
+  content: "";
+  width: 50px;
+  height: 10px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.barre_hamburger {
+  width: 50px;
+  height: 10px;
+  position: absolute;
+  top: 270px;
+  left: 160px;
+  background: #000;
+  z-index: 20;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.link_general {
+  width: 100px;
+  height: 100px;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: 225px;
+  left: 135px;
+  background: #ecf0f1;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.link_one {
+  background: url("http://i.imgur.com/oahGvMz.png")
+  #9ACD32 no-repeat center center;
+}
+
+.link_two {
+  background: url("http://i.imgur.com/Xg6EgM3.png")
+  #FFD700 no-repeat center center;
+}
+
+.link_three {
+  background: url("http://i.imgur.com/rS2jSux.png")
+  #FF4500 no-repeat center center;
+}
+
+.link_four {
+  background: url("http://i.imgur.com/YOFWmVq.png")
+  #FF8C00 no-repeat center center;
+}
