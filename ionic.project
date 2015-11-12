@@ -1,4 +1,19 @@
 {
-  "name": "HCIApp",
-  "app_id": "c7f5e155"
+  "name": "WalkWithMe",
+  "app_id": "d8e3c02b",
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk",
+      "version": "12.41.296.5"
+    }
+  ],
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
 }
