@@ -1,0 +1,22 @@
+<ion-view view-title="friends">
+  <div class="bar bar-header">
+    <button class="button button-icon ion-ios-arrow-back" ui-sref="home" nav-direction="exit"></button>
+    <div class="h1 title">Friends List</div>
+  </div>
+  <ion-content class="has-header">
+
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/chats/{{friend.id}}">
+        <img ng-src="{{friend.face}}">
+        <h2>{{friend.name}}</h2>
+        <p>{{friend.level}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(friend)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

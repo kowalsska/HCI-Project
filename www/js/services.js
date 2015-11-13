@@ -20,7 +20,7 @@ angular.module('starter.services', [])
   }, {
     id: 2,
     name: 'hciAEuser',
-    level: 'Eager Stroller',
+    level: 'Competent Crawler',
     face: 'img/steve.jpg'
   }, {
     id: 3,
@@ -53,7 +53,7 @@ angular.module('starter.services', [])
     // Some fake testing data
     var data = [
       {
-        value: 300,
+        value: $scope.stepsUser1,
         color:"#F7464A",
         highlight: "#FF5A5E",
         label: "Me"

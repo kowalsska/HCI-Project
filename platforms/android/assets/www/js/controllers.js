@@ -17,20 +17,53 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('WalkCtrl', function($scope, Walk){
+.controller('WalkCtrl', function($scope, $interval){
 
-  $scope.chartlabels = ["January", "February", "March", "April", "May", "June", "July"];
-  $scope.chartseries = ['Series A', 'Series B'];
-  $scope.chartdata = [
-    [65, 59, 80, 81, 56, 55, 40],
-    [28, 48, 40, 19, 86, 27, 90]
-  ];
+  //Mocking up steps counter by interval counter
+  $scope.stepsUser1 = 1;
+  $scope.stepsUser2 = 1;
+  $interval(function(){
+    //console.log($scope.steps++);
+    $scope.stepsUser1++;
 
-  var data = Walk.all();
+    if($scope.stepsUser1 % 2 == 0) {
+      $scope.stepsUser2++;
+    }
 
-  var myPie = new Chart(document.getElementById("myChart").getContext("2d")).Doughnut(data, {
-    animationSteps: 100,
-    animationEasing: 'easeInOutQuart'	});
+    var data = [
+      {
+        value: $scope.stepsUser1,
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Me"
+      },
+      {
+        value: $scope.stepsUser2,
+        color: "#1ABC9C",
+        highlight: "#48C9B0",
+        label: "testUser"
+      }
+    ];
+    
+    var myPie = new Chart(document.getElementById("myChart").getContext("2d")).Doughnut(data, {
+      animation: false
+    });
+  },1000,0);
+
+  //var myPie = new Chart(document.getElementById("myChart").getContext("2d")).Doughnut(data, {
+  //  animationSteps: 100,
+  //  animationEasing: 'easeInOutQuart'	});
+
+  //!!Pedometer doesn't work on my Android phone
+    //var successHandler = function (pedometerData) {
+    //  $scope.steps = pedometerData.numberOfSteps;
+    //};
+    //var onError = function (error) {
+    //  alery("ERROR!" + error);
+    //};
+    //pedometer.startPedometerUpdates(successHandler, counter());
+
+
 
 
 })

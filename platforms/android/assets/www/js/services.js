@@ -53,7 +53,7 @@ angular.module('starter.services', [])
     // Some fake testing data
     var data = [
       {
-        value: 300,
+        value: $scope.stepsUser1,
         color:"#F7464A",
         highlight: "#FF5A5E",
         label: "Me"
