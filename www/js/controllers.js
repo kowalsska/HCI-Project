@@ -74,8 +74,8 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('HistoryCtrl', function($scope){
+.controller('HistoryCtrl', function($scope, History){
 
-
+  $scope.history = History.all();
 
 });
