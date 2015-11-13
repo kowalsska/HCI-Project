@@ -44,7 +44,7 @@ angular.module('starter.controllers', [])
         label: "testUser"
       }
     ];
-    
+
     var myPie = new Chart(document.getElementById("myChart").getContext("2d")).Doughnut(data, {
       animation: false
     });
@@ -74,8 +74,8 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('HistoryCtrl', function($scope){
+.controller('HistoryCtrl', function($scope, History){
 
-
+  $scope.history = History.all();
 
 });

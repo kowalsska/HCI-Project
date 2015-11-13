@@ -84,18 +84,21 @@ angular.module('starter.services', [])
     oponentName: 'hansheng456',
     date: "10.11.2015",
     oponentPhoto: 'img/hansheng.jpg',
+    steps: '5,689',
     won: 'Lost'
   }, {
     chId: 2,
     oponentName: 'hciAEuser',
     date: "2.11.2015",
     oponentPhoto: 'img/steve.jpg',
+    steps: '6,237',
     won: 'Win'
   }, {
     chId: 3,
     oponentName: 'testUser',
     date: "30.10.2015",
     oponentPhoto: 'img/alexs.jpg',
+    steps: '5,143',
     won: 'Lost'
   }];
 

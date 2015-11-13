@@ -20,7 +20,7 @@ angular.module('starter.services', [])
   }, {
     id: 2,
     name: 'hciAEuser',
-    level: 'Eager Stroller',
+    level: 'Competent Crawler',
     face: 'img/steve.jpg'
   }, {
     id: 3,
@@ -47,29 +47,72 @@ angular.module('starter.services', [])
   };
 })
 
-  .factory('Walk', function() {
-    // Might use a resource here that returns a JSON array
+.factory('Walk', function() {
+  // Might use a resource here that returns a JSON array
 
-    // Some fake testing data
-    var data = [
-      {
-        value: $scope.stepsUser1,
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Me"
-      },
-      {
-        value: 130,
-        color: "#1ABC9C",
-        highlight: "#48C9B0",
-        label: "testUser"
-      }
-    ];
-
-    return {
-      all: function () {
-        return data;
-      }
+  // Some fake testing data
+  var data = [
+    {
+      value: $scope.stepsUser1,
+      color:"#F7464A",
+      highlight: "#FF5A5E",
+      label: "Me"
+    },
+    {
+      value: 130,
+      color: "#1ABC9C",
+      highlight: "#48C9B0",
+      label: "testUser"
     }
+  ];
 
-  });
+  return {
+    all: function () {
+      return data;
+    }
+  }
+
+})
+
+.factory('History', function() {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  var history = [
+      {
+    chId: 1,
+    oponentName: 'hansheng456',
+    date: "10.11.2015",
+    oponentPhoto: 'img/hansheng.jpg',
+    won: 'Lost'
+  }, {
+    chId: 2,
+    oponentName: 'hciAEuser',
+    date: "2.11.2015",
+    oponentPhoto: 'img/steve.jpg',
+    won: 'Win'
+  }, {
+    chId: 3,
+    oponentName: 'testUser',
+    date: "30.10.2015",
+    oponentPhoto: 'img/alexs.jpg',
+    won: 'Lost'
+  }];
+
+  return {
+    all: function() {
+      return history;
+    },
+    remove: function(chat) {
+      history.splice(history.indexOf(chat), 1);
+    },
+    get: function(chatId) {
+      for (var i = 0; i < history.length; i++) {
+        if (history[i].id === parseInt(chatId)) {
+          return history[i];
+        }
+      }
+      return null;
+    }
+  };
+})
