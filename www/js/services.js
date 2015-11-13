@@ -45,4 +45,31 @@ angular.module('starter.services', [])
       return null;
     }
   };
-});
+})
+
+  .factory('Walk', function() {
+    // Might use a resource here that returns a JSON array
+
+    // Some fake testing data
+    var data = [
+      {
+        value: 300,
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Me"
+      },
+      {
+        value: 130,
+        color: "#1ABC9C",
+        highlight: "#48C9B0",
+        label: "testUser"
+      }
+    ];
+
+    return {
+      all: function () {
+        return data;
+      }
+    }
+
+  });
