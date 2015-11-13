@@ -47,6 +47,10 @@
                         {
                             "xml": "<preference default=\"true\" name=\"xwalkMultipleApk\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Pedometer\"><param name=\"android-package\" value=\"org.apache.cordova.pedometer.PedoListener\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -87,6 +91,9 @@
             "PACKAGE_NAME": "com.ionicframework.walkwithme221163"
         },
         "cordova-plugin-crosswalk-webview": {
+            "PACKAGE_NAME": "com.ionicframework.walkwithme221163"
+        },
+        "cordova-plugin-pedometer": {
             "PACKAGE_NAME": "com.ionicframework.walkwithme221163"
         }
     },

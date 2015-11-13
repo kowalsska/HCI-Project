@@ -42,6 +42,13 @@ module.exports = [
             "cordova.plugins.Keyboard"
         ],
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-pedometer/www/pedometer.js",
+        "id": "cordova-plugin-pedometer.Pedometer",
+        "clobbers": [
+            "pedometer"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -53,7 +60,8 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "1.0.1",
     "cordova-plugin-whitelist": "1.0.0",
     "ionic-plugin-keyboard": "1.0.7",
-    "cordova-plugin-crosswalk-webview": "1.4.0"
+    "cordova-plugin-crosswalk-webview": "1.4.0",
+    "cordova-plugin-pedometer": "0.4.0"
 }
 // BOTTOM OF METADATA
 });

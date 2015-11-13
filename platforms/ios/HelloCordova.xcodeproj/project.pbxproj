@@ -46,6 +46,8 @@
 		ACE4DD5F9B444C1B9D2128EE /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 229F0D897FC34EB391EE831A /* CDVStatusBar.m */; };
 		676D819D522742ABB5455CE5 /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B41203336D459F9481AB0F /* IonicKeyboard.m */; };
 		91259FB2B6D944D6BE18966F /* UIWebViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 246341614A7C42FBBD092128 /* UIWebViewExtension.m */; };
+		2256CEDA959241E180EC90B5 /* Pedometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5431DDC8180F4350BF0A41CD /* Pedometer.m */; };
+		7EC427D57C8341D4B02A72FA /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538A7A7963DC431AB7193751 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +127,9 @@
 		246341614A7C42FBBD092128 /* UIWebViewExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIWebViewExtension.m"; path = "ionic-plugin-keyboard/UIWebViewExtension.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		1152DF11870E45419DCB60B9 /* IonicKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "IonicKeyboard.h"; path = "ionic-plugin-keyboard/IonicKeyboard.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		AA1429AEBCEB48609B204D00 /* UIWebViewExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIWebViewExtension.h"; path = "ionic-plugin-keyboard/UIWebViewExtension.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		5431DDC8180F4350BF0A41CD /* Pedometer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Pedometer.m"; path = "cordova-plugin-pedometer/Pedometer.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		D317F7A3B0D4412BB488AD8B /* Pedometer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Pedometer.h"; path = "cordova-plugin-pedometer/Pedometer.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		538A7A7963DC431AB7193751 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreMotion.framework"; path = "System/Library/Frameworks/CoreMotion.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +141,7 @@
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
+				7EC427D57C8341D4B02A72FA /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +214,7 @@
 				5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
+				538A7A7963DC431AB7193751 /* CoreMotion.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -237,6 +244,8 @@
 				246341614A7C42FBBD092128 /* UIWebViewExtension.m */,
 				1152DF11870E45419DCB60B9 /* IonicKeyboard.h */,
 				AA1429AEBCEB48609B204D00 /* UIWebViewExtension.h */,
+				5431DDC8180F4350BF0A41CD /* Pedometer.m */,
+				D317F7A3B0D4412BB488AD8B /* Pedometer.h */,
 			);
 			name = Plugins;
 			path = "HelloCordova/Plugins";
@@ -428,6 +437,7 @@
 				ACE4DD5F9B444C1B9D2128EE /* CDVStatusBar.m in Sources */,
 				676D819D522742ABB5455CE5 /* IonicKeyboard.m in Sources */,
 				91259FB2B6D944D6BE18966F /* UIWebViewExtension.m in Sources */,
+				2256CEDA959241E180EC90B5 /* Pedometer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
