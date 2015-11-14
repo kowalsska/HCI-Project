@@ -9,14 +9,15 @@
     <div class="list">
       <div class="card" ng-repeat="entry in history">
 
-        <a class="item item-thumbnail-left" ui-sref="home">
+        <a class="item item-thumbnail-left" ng-click="showAlert()">
           <img ng-src="{{entry.oponentPhoto}}" align="left">
-          <h2>{{entry.won}} against {{entry.oponentName}}</h2>
+          <h3>{{entry.won}} against {{entry.oponentName}}</h3>
+          <h4>You made {{entry.steps}} steps</h4>
         </a>
 
         <div class="item item-icon-left assertive">
           <i class="icon ion-android-calendar"></i>
-          {{entry.date}}
+          {{entry.date}} <button class="button button-small">Revenge!</button>
         </div>
 
       </div>

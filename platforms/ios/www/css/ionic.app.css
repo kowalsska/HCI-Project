@@ -9120,7 +9120,6 @@ a.button {
   width: 150px;
   height: 150px;
   display: block;
-  cursor: pointer;
   border-radius: 50%;
   position: absolute;
   top: 200px;

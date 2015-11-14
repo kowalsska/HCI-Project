@@ -74,8 +74,15 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('HistoryCtrl', function($scope, History){
+.controller('HistoryCtrl', function($scope, History, $ionicPopup){
 
   $scope.history = History.all();
+
+  $scope.showAlert = function() {
+    $ionicPopup.alert({
+      title: 'Can\'t start new challenge!',
+      template: 'You\'re have an active challenge at the moment'
+    });
+  };
 
 });
