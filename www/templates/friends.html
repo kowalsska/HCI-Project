@@ -5,9 +5,13 @@
     <div class="buttons">
       <button class="button button-icon ion-plus-round" ui-sref="%%"></button>
     </div>
-    </div>
+  </div>
   <ion-content class="has-header">
     <ion-list>
+      <label class="item-input-wrapper search"  lable style="float:left;clear:both;">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input placeholder="Search users" ng-keyup="searchList($event)" type="text">
+      </label>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="friend in friends" type="item-text-wrap" ui-sref="home">
         <img ng-src="{{friend.face}}">
         <h2>{{friend.name}}</h2>
