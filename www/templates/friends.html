@@ -3,16 +3,18 @@
     <button class="button button-icon ion-chevron-left" ui-sref="home" nav-direction="exit"></button>
     <div class="h1 title">Friends List</div>
     <div class="buttons">
-      <button class="button button-icon ion-plus-round" ui-sref="%%"></button>
+      <button class="button button-icon ion-plus-round" ng-click="addFriend()"></button>
     </div>
   </div>
   <ion-content class="has-header">
-    <ion-list>
-      <label class="item-input-wrapper search"  lable style="float:left;clear:both;">
+    <div class="list list-inset">
+      <label class="item item-input">
         <i class="icon ion-search placeholder-icon"></i>
-        <input placeholder="Search users" ng-keyup="searchList($event)" type="text">
+        <input type="text" placeholder="Search">
       </label>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="friend in friends" type="item-text-wrap" ui-sref="home">
+    </div>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="friend in friends" type="item-text-wrap" ui-sref="walk">
         <img ng-src="{{friend.face}}">
         <h2>{{friend.name}}</h2>
         <p>{{friend.level}}</p>

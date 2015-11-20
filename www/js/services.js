@@ -43,6 +43,15 @@ angular.module('starter.services', [])
         }
       }
       return null;
+    },
+    add: function(res) {
+      var obj = {
+        id: 4,
+        name: res,
+        level: 'Advanced Walker',
+        face: 'img/default.png'
+      };
+      friends.push(obj);
     }
   };
 })

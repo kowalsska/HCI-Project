@@ -9183,3 +9183,28 @@ a.button {
 
 .link_four {
   background: url("http://i.imgur.com/YOFWmVq.png") #FF8C00 no-repeat center center; }
+
+#wrap {
+  width: 600px;
+  margin: 0 auto; }
+
+#left_col {
+  float: left;
+  width: 300px;
+  padding-left: 50px; }
+
+#right_col {
+  position: absolute;
+  float: right;
+  width: 300px;
+  left: 220px; }
+
+#walk_counter {
+  position: absolute;
+  top: 85px;
+  left: 140px;
+  text-align: center; }
+
+#chart {
+  position: relative;
+  left: 40px; }
