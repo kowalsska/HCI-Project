@@ -6,8 +6,7 @@
   <ion-content class="has-header">
 
     <div class="list">
-
-      <li class="item item-toggle">
+      <li class="item item-toggle icon ion-earth">
         Track my location
         <label class="toggle toggle-energized">
           <input type="checkbox">
@@ -16,8 +15,7 @@
           </div>
         </label>
       </li>
-
-      <li class="item item-toggle">
+      <li class="item item-toggle ion-ios-minus">
         Post anonymously
         <label class="toggle toggle-energized">
           <input type="checkbox">
@@ -26,31 +24,67 @@
           </div>
         </label>
       </li>
-
-      <a class="item item-icon-left" href="#">
+      <a class="item item-icon-left">
         <i class="icon ion-ios-person"></i>
         Change profile picture
       </a>
-
-      <a class="item item-icon-left" href="#">
+      <div class="item item-divider">
+        Personal Setting
+      </div>
+      <div class="list">
+        <label class="item item-input item-select ion-transgender">
+          <div class="input-label">
+            Gender
+          </div>
+          <select>
+            <option selected>Male</option>
+            <option>Female</option>
+          </select>
+        </label>
+      </div>
+      <div class="list">
+        <label class="item item-input item-select ion-ios-speedometer">
+          <div class="input-label">
+           Weight
+          </div>
+          <select>
+            <option>45KG</option>
+            <option>50KG</option>
+            <option>55KG</option>
+            <option>60KG</option>
+            <option>65KG</option>
+            <option>70KG</option>
+            <option>75KG</option>
+            <option selected>80KG</option>
+            <option>85KG</option>
+          </select>
+        </label>
+      </div>
+      <div class="list">
+        <label class="item item-input item-select ion-man">
+          <div class="input-label">
+            Height
+          </div>
+          <select>
+            <option>160 CM</option>
+            <option selected>170CM</option>
+            <option>180CM</option>
+          </select>
+        </label>
+      </div>
+      <a class="item item-icon-left" ui-sref="home">
         <i class="icon ion-log-out"></i>
         Log out
       </a>
-
       <div class="item item-divider">
         Your profile
       </div>
-
       <li class="item" href="#">
         <i class="icon ion-thumbsup"></i> 112
       </li>
-
       <li class="item" href="#">
         <i class="icon ion-thumbsdown"></i> 37
       </li>
-
-
     </div>
-
   </ion-content>
 </ion-view>

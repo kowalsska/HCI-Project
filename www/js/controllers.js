@@ -18,7 +18,7 @@ angular.module('starter.controllers', [])
   $scope.addFriend = function() {
     var addNewFriend = $ionicPopup.prompt({
       title: 'Add a friend',
-      subTitle: 'Please type in username of your friend',
+      subTitle: 'Please type in username of your friend'
     });
     addNewFriend.then(function(res) {
         Friends.add(res);

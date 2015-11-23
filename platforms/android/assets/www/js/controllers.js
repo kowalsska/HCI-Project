@@ -8,12 +8,22 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('FriendsCtrl', function($scope, Friends){
+.controller('FriendsCtrl', function($scope, Friends, $ionicPopup){
 
   $scope.friends = Friends.all();
   $scope.remove = function(friend) {
     Friends.remove(friend);
   };
+
+  $scope.addFriend = function() {
+    var addNewFriend = $ionicPopup.prompt({
+      title: 'Add a friend',
+      subTitle: 'Please type in username of your friend'
+    });
+    addNewFriend.then(function(res) {
+        Friends.add(res);
+    });
+  }
 
 })
 
@@ -46,7 +56,9 @@ angular.module('starter.controllers', [])
     ];
 
     var myPie = new Chart(document.getElementById("myChart").getContext("2d")).Doughnut(data, {
-      animation: false
+      animation: false,
+      maintainAspectRatio: true,
+      responsive: false
     });
   },1000,0);
 

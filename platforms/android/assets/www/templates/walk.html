@@ -5,9 +5,25 @@
   </div>
   <ion-content class="has-header">
 
-    <canvas id="myChart" width="400" height="400"></canvas>
-    <h2>Me: {{stepsUser1}} steps</h2>
-    <h2>testUser: {{stepsUser2}} steps</h2>
+    <div id="chart">
+      <canvas id="myChart" width="300" height="300"></canvas>
+    </div>
+
+    <div id="walk_counter">
+      <h4>You are</h4>
+      <h3>{{stepsUser1-stepsUser2}}</h3>
+      <h4>steps ahead</h4>
+    </div>
+
+    <h2 align="center">steps</h2>
+    <div id="wrap">
+      <div id="left_col">
+        Me: {{stepsUser1}} steps
+      </div>
+      <div id="right_col">
+        testUser: {{stepsUser2}} steps
+      </div>
+    </div>
 
   </ion-content>
 </ion-view>
