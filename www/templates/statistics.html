@@ -1,0 +1,39 @@
+<ion-view view-title="statistics">
+  <div class="bar bar-header">
+    <button class="button button-icon ion-ios-arrow-back" ui-sref="history" nav-direction="exit"></button>
+    <div class="h1 title">Statistics of the challenge</div>
+  </div>
+  <ion-content class="has-header">
+
+    <div class="list">
+
+      <div class="card">
+    <h2 align="center">Distance</h2>
+    <div id="chart">
+      <canvas id="stepsChart" width="300" height="300"></canvas>
+    </div>
+    <h4 align="center">You made 6,237</h4>
+    <h4 align="center">Which is 12 km</h4>
+      </div>
+
+    <div class="card">
+    <h2 align="center">Calories</h2>
+    <div id="chart">
+      <canvas id="caloriesChart" width="300" height="300"></canvas>
+    </div>
+    <h4 align="center">2,440 kcal burned</h4>
+      </div>
+
+    <div class="card">
+    <h2 align="center">Environment</h2>
+      <div id="chart">
+        <canvas id="envChart" width="300" height="300"></canvas>
+      </div>
+    <h4 align="center">You emitted 16g of CO2 less than if you used car on this distance</h4>
+    <h4 align="center">You saved 5.23£ on gas</h4>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>

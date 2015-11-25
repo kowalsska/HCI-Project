@@ -4,7 +4,7 @@
 angular.module('starter.controllers', [])
 
 .controller('HomeCtrl', function($scope, $state){
-  
+
 })
 
 .controller('NotificationController', function($scope, $cordovaLocalNotification, $ionicPlatform) {
@@ -106,5 +106,85 @@ angular.module('starter.controllers', [])
       template: 'You\'re have an active challenge at the moment'
     });
   };
+
+})
+
+.controller('StatisticsCtrl', function($scope){
+
+  var dataSteps = {
+    labels: ["7am", "8am", "9am", "10am", "11am", "12pm", "1pm"],
+    datasets: [
+      {
+        label: "My Second dataset",
+        fillColor: "rgba(151,187,205,0.5)",
+        strokeColor: "rgba(151,187,205,0.8)",
+        highlightFill: "rgba(151,187,205,0.75)",
+        highlightStroke: "rgba(151,187,205,1)",
+        data: [245, 356, 980, 780, 543, 420, 900]
+      }
+    ]
+  };
+
+  var mySteps = new Chart(document.getElementById("stepsChart").getContext("2d")).Bar(dataSteps, {
+    animation: false,
+    maintainAspectRatio: true,
+    responsive: false
+  });
+
+  var dataCalories = {
+    labels: ["7am", "8am", "9am", "10am", "11am", "12pm", "1pm"],
+    datasets: [
+      {
+        label: "My Second dataset",
+        fillColor: "rgba(151,187,205,0.2)",
+        strokeColor: "rgba(151,187,205,1)",
+        pointColor: "rgba(151,187,205,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(151,187,205,1)",
+        data: [28, 48, 40, 19, 86, 27, 90]
+      }
+    ]
+  };
+
+  var myCalories = new Chart(document.getElementById("caloriesChart").getContext("2d")).Line(dataCalories, {
+    animation: false,
+    maintainAspectRatio: true,
+    responsive: false
+  });
+
+  var dataEnv = {
+    labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+    datasets: [
+      {
+        label: "My First dataset",
+        fillColor: "rgba(220,220,220,0.2)",
+        strokeColor: "rgba(220,220,220,1)",
+        pointColor: "rgba(220,220,220,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(220,220,220,1)",
+        data: [65, 59, 90, 81, 56, 55, 40]
+      },
+      {
+        label: "My Second dataset",
+        fillColor: "rgba(151,187,205,0.2)",
+        strokeColor: "rgba(151,187,205,1)",
+        pointColor: "rgba(151,187,205,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(151,187,205,1)",
+        data: [28, 48, 40, 19, 96, 27, 100]
+      }
+    ]
+  };
+
+  var myEnv = new Chart(document.getElementById("envChart").getContext("2d")).Radar(dataEnv, {
+    animation: false,
+    maintainAspectRatio: true,
+    responsive: false
+  });
+
+
 
 });

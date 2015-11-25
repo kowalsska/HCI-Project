@@ -103,13 +103,27 @@ angular.module('starter.services', [])
     steps: '6,237',
     won: 'Win'
   }, {
-    chId: 3,
+      chId: 3,
+      oponentName: 'pietro',
+      date: "1.11.2015",
+      oponentPhoto: 'img/pietro.jpg',
+      steps: '21,237',
+      won: 'Win'
+  },{
+    chId: 4,
     oponentName: 'testUser',
     date: "30.10.2015",
     oponentPhoto: 'img/alexs.jpg',
     steps: '5,143',
     won: 'Lost'
-  }];
+  },{
+    chId: 5,
+    oponentName: 'magda',
+    date: "25.10.2015",
+    oponentPhoto: 'img/magda.jpg',
+    steps: '14,521',
+    won: 'Win'
+  },];
 
   return {
     all: function() {

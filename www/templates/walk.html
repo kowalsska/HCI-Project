@@ -15,14 +15,26 @@
       <h4>steps ahead</h4>
     </div>
 
-    <h2 align="center">steps</h2>
-    <div id="wrap">
-      <div id="left_col">
-        Me: {{stepsUser1}} steps
-      </div>
-      <div id="right_col">
-        testUser: {{stepsUser2}} steps
-      </div>
+    <div class="list">
+
+      <div class="card">
+    <h2 align="center">Distance</h2>
+        <h4 align="center">Me: {{stepsUser1}} steps</h4>
+        <h4 align="center">testUser: {{stepsUser2}} steps</h4>
+    </div>
+
+
+      <div class="card">
+    <h2 align="center">Calories</h2>
+      <h4 align="center">{{stepsUser1*17}} calories burned </h4>
+        </div>
+
+
+      <div class="card">
+    <h2 align="center">Environment</h2>
+        <h4 align="center">{{stepsUser1}}£ saved on gas </h4>
+        </div>
+
     </div>
 
   </ion-content>

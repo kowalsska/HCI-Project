@@ -34,7 +34,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
     .state('walk', {
       url: '/walk',
       templateUrl: 'templates/walk.html',
-      controller: 'WalkCtrl'
+      controller: 'WalkCtrl',
+      cache: false
     })
     .state('settings', {
       url: '/settings',
@@ -45,6 +46,11 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       url: '/history',
       templateUrl: 'templates/history.html',
       controller: 'HistoryCtrl'
+    })
+    .state('statistics', {
+      url: '/statistics',
+      templateUrl: 'templates/statistics.html',
+      controller: 'StatisticsCtrl'
     });
 
 //http://i.imgur.com/oahGvMz.png
