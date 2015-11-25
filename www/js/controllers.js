@@ -4,7 +4,24 @@
 angular.module('starter.controllers', [])
 
 .controller('HomeCtrl', function($scope, $state){
+  
+})
 
+.controller('NotificationController', function($scope, $cordovaLocalNotification, $ionicPlatform) {
+
+
+  //$ionicPlatform.ready(function(){
+  //  $cordovaLocalNotification.schedule({
+  //    id: 1,
+  //    title: 'WALK',
+  //    text: "Keep walking!",
+  //    data: {
+  //      customProperty: 'custom value'
+  //    }
+  //  }).then(function (result) {
+  //    console.log('Notification 1 triggered');
+  //  });
+  //})
 
 })
 
@@ -27,7 +44,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('WalkCtrl', function($scope, $interval){
+.controller('WalkCtrl', function($scope, $interval, $cordovaLocalNotification){
 
   //Mocking up steps counter by interval counter
   $scope.stepsUser1 = 1;
@@ -60,29 +77,22 @@ angular.module('starter.controllers', [])
       maintainAspectRatio: true,
       responsive: false
     });
+
+    $cordovaLocalNotification.schedule({
+      id: 1,
+      title: 'WALK',
+      text: "You made " + $scope.stepsUser1 + " steps in current challenge.",
+      data: {
+        customProperty: 'custom value'
+      }
+    });
+
   },1000,0);
-
-  //var myPie = new Chart(document.getElementById("myChart").getContext("2d")).Doughnut(data, {
-  //  animationSteps: 100,
-  //  animationEasing: 'easeInOutQuart'	});
-
-  //!!Pedometer doesn't work on my Android phone
-    //var successHandler = function (pedometerData) {
-    //  $scope.steps = pedometerData.numberOfSteps;
-    //};
-    //var onError = function (error) {
-    //  alery("ERROR!" + error);
-    //};
-    //pedometer.startPedometerUpdates(successHandler, counter());
-
-
 
 
 })
 
 .controller('SettingsCtrl', function($scope){
-
-
 
 })
 

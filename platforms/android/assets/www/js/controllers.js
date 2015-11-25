@@ -8,6 +8,24 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('NotificationController', function($scope, $cordovaLocalNotification, $ionicPlatform) {
+
+
+  //$ionicPlatform.ready(function(){
+  //  $cordovaLocalNotification.schedule({
+  //    id: 1,
+  //    title: 'WALK',
+  //    text: "Keep walking!",
+  //    data: {
+  //      customProperty: 'custom value'
+  //    }
+  //  }).then(function (result) {
+  //    console.log('Notification 1 triggered');
+  //  });
+  //})
+
+})
+
 .controller('FriendsCtrl', function($scope, Friends, $ionicPopup){
 
   $scope.friends = Friends.all();
@@ -27,7 +45,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('WalkCtrl', function($scope, $interval){
+.controller('WalkCtrl', function($scope, $interval, $cordovaLocalNotification){
 
   //Mocking up steps counter by interval counter
   $scope.stepsUser1 = 1;
@@ -60,7 +78,25 @@ angular.module('starter.controllers', [])
       maintainAspectRatio: true,
       responsive: false
     });
+
+    $cordovaLocalNotification.schedule({
+      id: 1,
+      title: 'WALK',
+      text: "You made " + $scope.stepsUser1 + " steps in current challenge.",
+      data: {
+        customProperty: 'custom value'
+      }
+    }).then(function (result) {
+      console.log('Notification 1 triggered');
+    });
+
   },1000,0);
+
+  //setTimeout(function(){
+  //
+  //}, 2000);
+  //
+
 
   //var myPie = new Chart(document.getElementById("myChart").getContext("2d")).Doughnut(data, {
   //  animationSteps: 100,
