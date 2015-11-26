@@ -44,7 +44,26 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('WalkCtrl', function($scope, $interval, $cordovaLocalNotification){
+.controller('WalkCtrl', function($scope, $interval, $cordovaLocalNotification, $ionicPopup, $state){
+
+  $scope.cancel = function() {
+    var confirmPopup = $ionicPopup.confirm({
+      title: 'End of challenge',
+      template: 'Are you sure you want to stop current challenge?'
+    });
+    confirmPopup.then(function(res) {
+      if(res) {
+        $scope.stepsUser1 = 1;
+        $scope.stepsUser2 = 1;
+        $cordovaLocalNotification.clear(1, function() {
+          console.log("notification gone");
+        }, this);
+        $state.go('home');
+      } else {
+        console.log('No cancel');
+      }
+    });
+  };
 
   //Mocking up steps counter by interval counter
   $scope.stepsUser1 = 1;
@@ -78,14 +97,17 @@ angular.module('starter.controllers', [])
       responsive: false
     });
 
-    $cordovaLocalNotification.schedule({
-      id: 1,
-      title: 'WALK',
-      text: "You made " + $scope.stepsUser1 + " steps in current challenge.",
-      data: {
-        customProperty: 'custom value'
-      }
-    });
+    if($scope.stepsUser1 > 2) {
+
+      $scope.notification = $cordovaLocalNotification.schedule({
+        id: 1,
+        title: 'WALK',
+        text: "You made " + $scope.stepsUser1 + " steps in current challenge.",
+        data: {
+          customProperty: 'custom value'
+        }
+      });
+    }
 
   },1000,0);
 

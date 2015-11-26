@@ -9,19 +9,34 @@
     <div class="list">
       <div class="card" ng-repeat="entry in history">
 
-        <a class="item item-thumbnail-left">
-          <img ng-src="{{entry.oponentPhoto}}" align="left">
-          <h3>{{entry.won}} against {{entry.oponentName}}</h3>
-          <h4>You made {{entry.steps}} steps</h4>
-        </a>
+        <div ng-if="entry.won === 'Lost'">
+          <a class="item item-thumbnail-left" ui-sref="statistics">
+            <img ng-src="{{entry.oponentPhoto}}" align="left">
+            <h2>{{entry.won}} against {{entry.oponentName}}</h2>
+            <h3>You made {{entry.steps}} steps</h3>
+          </a>
+          <div class="item item-icon-left assertive">
+            <i class="icon ion-android-calendar"><h2 style="color:red;">{{entry.date}}</h2></i>
+            <button class="button button-normal button-assertive" ng-click="showAlert()"
+            button style="float:right;clear:both;">
+              Revenge!
+              </button>
+          </div>
+        </div>
 
-        <div class="item item-icon-left assertive">
-          <i class="icon ion-android-calendar"></i>
-          {{entry.date}}
-          <button class="button button-normal button-outline button-assertive" ng-click="showAlert()"
-          button style="float:right;clear:both;">
-            Revenge!
+        <div ng-if="entry.won === 'Win'">
+          <a class="item item-thumbnail-left" ui-sref="statistics">
+            <img ng-src="{{entry.oponentPhoto}}" align="left">
+            <h2>{{entry.won}} against {{entry.oponentName}}</h2>
+            <h3>You made {{entry.steps}} steps</h3>
+          </a>
+          <div class="item item-icon-left balanced">
+            <i class="icon ion-android-calendar"><h2 style="color:limegreen;">{{entry.date}}</h2></i>
+            <button class="button button-normal button-balanced" ng-click="showAlert()"
+                    button style="float:right;clear:both;">
+              Revenge!
             </button>
+          </div>
         </div>
 
       </div>

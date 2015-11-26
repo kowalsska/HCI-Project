@@ -5,7 +5,6 @@ angular.module('starter.controllers', [])
 
 .controller('HomeCtrl', function($scope, $state){
 
-
 })
 
 .controller('NotificationController', function($scope, $cordovaLocalNotification, $ionicPlatform) {
@@ -45,7 +44,26 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('WalkCtrl', function($scope, $interval, $cordovaLocalNotification){
+.controller('WalkCtrl', function($scope, $interval, $cordovaLocalNotification, $ionicPopup, $state){
+
+  $scope.cancel = function() {
+    var confirmPopup = $ionicPopup.confirm({
+      title: 'End of challenge',
+      template: 'Are you sure you want to stop current challenge?'
+    });
+    confirmPopup.then(function(res) {
+      if(res) {
+        $scope.stepsUser1 = 1;
+        $scope.stepsUser2 = 1;
+        $cordovaLocalNotification.clear(1, function() {
+          console.log("notification gone");
+        }, this);
+        $state.go('home');
+      } else {
+        console.log('No cancel');
+      }
+    });
+  };
 
   //Mocking up steps counter by interval counter
   $scope.stepsUser1 = 1;
@@ -79,46 +97,24 @@ angular.module('starter.controllers', [])
       responsive: false
     });
 
-    $cordovaLocalNotification.schedule({
-      id: 1,
-      title: 'WALK',
-      text: "You made " + $scope.stepsUser1 + " steps in current challenge.",
-      data: {
-        customProperty: 'custom value'
-      }
-    }).then(function (result) {
-      console.log('Notification 1 triggered');
-    });
+    if($scope.stepsUser1 > 2) {
+
+      $scope.notification = $cordovaLocalNotification.schedule({
+        id: 1,
+        title: 'WALK',
+        text: "You made " + $scope.stepsUser1 + " steps in current challenge.",
+        data: {
+          customProperty: 'custom value'
+        }
+      });
+    }
 
   },1000,0);
-
-  //setTimeout(function(){
-  //
-  //}, 2000);
-  //
-
-
-  //var myPie = new Chart(document.getElementById("myChart").getContext("2d")).Doughnut(data, {
-  //  animationSteps: 100,
-  //  animationEasing: 'easeInOutQuart'	});
-
-  //!!Pedometer doesn't work on my Android phone
-    //var successHandler = function (pedometerData) {
-    //  $scope.steps = pedometerData.numberOfSteps;
-    //};
-    //var onError = function (error) {
-    //  alery("ERROR!" + error);
-    //};
-    //pedometer.startPedometerUpdates(successHandler, counter());
-
-
 
 
 })
 
 .controller('SettingsCtrl', function($scope){
-
-
 
 })
 
@@ -132,5 +128,85 @@ angular.module('starter.controllers', [])
       template: 'You\'re have an active challenge at the moment'
     });
   };
+
+})
+
+.controller('StatisticsCtrl', function($scope){
+
+  var dataSteps = {
+    labels: ["7am", "8am", "9am", "10am", "11am", "12pm", "1pm"],
+    datasets: [
+      {
+        label: "My Second dataset",
+        fillColor: "rgba(151,187,205,0.5)",
+        strokeColor: "rgba(151,187,205,0.8)",
+        highlightFill: "rgba(151,187,205,0.75)",
+        highlightStroke: "rgba(151,187,205,1)",
+        data: [245, 356, 980, 780, 543, 420, 900]
+      }
+    ]
+  };
+
+  var mySteps = new Chart(document.getElementById("stepsChart").getContext("2d")).Bar(dataSteps, {
+    animation: false,
+    maintainAspectRatio: true,
+    responsive: false
+  });
+
+  var dataCalories = {
+    labels: ["7am", "8am", "9am", "10am", "11am", "12pm", "1pm"],
+    datasets: [
+      {
+        label: "My Second dataset",
+        fillColor: "rgba(151,187,205,0.2)",
+        strokeColor: "rgba(151,187,205,1)",
+        pointColor: "rgba(151,187,205,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(151,187,205,1)",
+        data: [28, 48, 40, 19, 86, 27, 90]
+      }
+    ]
+  };
+
+  var myCalories = new Chart(document.getElementById("caloriesChart").getContext("2d")).Line(dataCalories, {
+    animation: false,
+    maintainAspectRatio: true,
+    responsive: false
+  });
+
+  var dataEnv = {
+    labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+    datasets: [
+      {
+        label: "My First dataset",
+        fillColor: "rgba(220,220,220,0.2)",
+        strokeColor: "rgba(220,220,220,1)",
+        pointColor: "rgba(220,220,220,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(220,220,220,1)",
+        data: [65, 59, 90, 81, 56, 55, 40]
+      },
+      {
+        label: "My Second dataset",
+        fillColor: "rgba(151,187,205,0.2)",
+        strokeColor: "rgba(151,187,205,1)",
+        pointColor: "rgba(151,187,205,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(151,187,205,1)",
+        data: [28, 48, 40, 19, 96, 27, 100]
+      }
+    ]
+  };
+
+  var myEnv = new Chart(document.getElementById("envChart").getContext("2d")).Radar(dataEnv, {
+    animation: false,
+    maintainAspectRatio: true,
+    responsive: false
+  });
+
+
 
 });
